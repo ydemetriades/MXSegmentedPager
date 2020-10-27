@@ -1,0 +1,221 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3 effective-4.2 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-module-flags: -target arm64-apple-ios10.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -O -module-name MXSegmentedControl
+@_exported import MXSegmentedControl
+import Swift
+import UIKit
+@objc @_inheritsConvenienceInitializers @objcMembers public class MXSegment : UIKit.UIButton {
+  public enum ImagePosition {
+    case top
+    case left
+    case bottom
+    case right
+    public static func == (a: MXSegment.ImagePosition, b: MXSegment.ImagePosition) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public var imagePosition: MXSegment.ImagePosition
+  @objc public var padding: CoreGraphics.CGFloat
+  @objc public var width: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @discardableResult
+  public func set(width: CoreGraphics.CGFloat) -> MXSegment
+  @discardableResult
+  public func set(image position: MXSegment.ImagePosition) -> MXSegment
+  @objc @discardableResult
+  public func set(padding: CoreGraphics.CGFloat) -> MXSegment
+  @objc @discardableResult
+  public func set(title: Swift.String?, for state: UIKit.UIControl.State = .normal) -> MXSegment
+  @objc @discardableResult
+  public func set(titleColor: UIKit.UIColor?, for state: UIKit.UIControl.State = .normal) -> MXSegment
+  @objc @discardableResult
+  public func set(image: UIKit.UIImage?, for state: UIKit.UIControl.State = .normal) -> MXSegment
+  @objc @discardableResult
+  public func set(background image: UIKit.UIImage?, for state: UIKit.UIControl.State = .normal) -> MXSegment
+  @objc @discardableResult
+  public func set(attributedTitle: Foundation.NSAttributedString?, for state: UIKit.UIControl.State = .normal) -> MXSegment
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension MXSegment {
+  @objc override dynamic public func layoutSubviews()
+  @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
+    @objc get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class MXIndicator : UIKit.UIView {
+  public enum Position {
+    case top
+    case bottom
+    public static func == (a: MXIndicator.Position, b: MXIndicator.Position) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  @objc public var contentEdgeInsets: UIKit.UIEdgeInsets
+  @objc final public let lineView: UIKit.UIView
+  public var linePosition: MXIndicator.Position
+  @objc final public let boxView: UIKit.UIView
+  @objc public var lineHeight: CoreGraphics.CGFloat
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable @objcMembers open class MXSegmentedControl : UIKit.UIControl {
+  @objc @IBInspectable dynamic public var bounces: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable dynamic public var font: UIKit.UIFont {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable dynamic public var textColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable dynamic public var selectedTextColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable public var segmentWidth: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable dynamic public var contentEdgeInsets: UIKit.UIEdgeInsets
+  @objc @IBInspectable dynamic public var segmentEdgeInsets: UIKit.UIEdgeInsets {
+    @objc get
+    @objc set
+  }
+  @objc final public let indicator: MXIndicator
+  public var separators: Separators {
+    get
+  }
+  public var animation: Animation
+  @objc public var progress: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc public var selectedIndex: Swift.Int {
+    @objc get
+  }
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc convenience public init(withTitles titles: [Swift.String])
+  @objc convenience public init(withAttributedTitles titles: [Foundation.NSAttributedString])
+  @objc convenience public init(withImages images: [UIKit.UIImage])
+  @objc deinit
+  @objc override dynamic open func layoutSubviews()
+  @objc override dynamic open func prepareForInterfaceBuilder()
+  @objc @IBOutlet weak public var scrollView: UIKit.UIScrollView? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic open func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
+}
+extension MXSegmentedControl {
+  @objc @IBInspectable dynamic public var cornerRadius: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable dynamic public var borderWidth: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable dynamic public var borderColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable dynamic public var separatorTop: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable dynamic public var separatorBottom: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable dynamic public var separatorWidth: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable dynamic public var separatorColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable dynamic public var indicatorLeft: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable dynamic public var indicatorRight: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable dynamic public var indicatorHeight: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable dynamic public var indicatorColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable dynamic public var boxColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable dynamic public var boxOpacity: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+}
+extension MXSegmentedControl {
+  @objc dynamic public func segment(at index: Swift.Int) -> MXSegment?
+  @objc dynamic public var count: Swift.Int {
+    @objc get
+  }
+  @objc dynamic public func newSegment() -> MXSegment
+  @objc dynamic public func remove(segmentAt index: Swift.Int)
+  @objc dynamic public func removeAll()
+  @objc @discardableResult
+  dynamic public func append(title: Swift.String) -> MXSegment
+  @objc @discardableResult
+  dynamic public func append(attributedTitle: Foundation.NSAttributedString) -> MXSegment
+  @objc @discardableResult
+  dynamic public func append(image: UIKit.UIImage?) -> MXSegment
+  @objc dynamic public func select(index: Swift.Int, animated: Swift.Bool)
+}
+extension MXSegmentedControl {
+  public struct Animation {
+    public var duration: Foundation.TimeInterval
+    public var delay: Foundation.TimeInterval
+    public var dampingRatio: CoreGraphics.CGFloat
+    public var velocity: CoreGraphics.CGFloat
+    public var options: UIKit.UIView.AnimationOptions
+  }
+}
+extension MXSegmentedControl {
+  public struct Separators {
+    public struct Inset {
+      public var top: CoreGraphics.CGFloat
+      public var width: CoreGraphics.CGFloat
+      public var bottom: CoreGraphics.CGFloat
+      public static var zero: Separators.Inset
+      public init(top: CoreGraphics.CGFloat, width: CoreGraphics.CGFloat, bottom: CoreGraphics.CGFloat)
+    }
+    public var inset: Separators.Inset
+    public var color: UIKit.UIColor
+    public var layers: [QuartzCore.CALayer] {
+      get
+    }
+  }
+}
+extension MXSegment.ImagePosition : Swift.Equatable {}
+extension MXSegment.ImagePosition : Swift.Hashable {}
+extension MXIndicator.Position : Swift.Equatable {}
+extension MXIndicator.Position : Swift.Hashable {}

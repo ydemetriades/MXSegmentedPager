@@ -21,8 +21,8 @@
 // THE SOFTWARE.
 
 #import <objc/runtime.h>
-#import <MXParallaxHeader/MXScrollView.h>
 #import "MXSegmentedPager.h"
+#import <MXScrollView.h>
 
 @interface MXSegmentedPager () <MXScrollViewDelegate, MXPagerViewDelegate, MXPagerViewDataSource>
 @property (nonatomic, strong) MXScrollView          *contentView;
