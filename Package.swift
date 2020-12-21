@@ -3,16 +3,17 @@ import PackageDescription
 
 let package = Package(
   name: "MXSegmentedPager",
-  platforms: [.iOS(.v10)],
+  platforms: [.iOS(.v12)],
   products: [
     .library(
       name: "MXSegmentedPager",
-      targets: ["MXSegmentedPager", "MXSegmentedControl"]
+      targets: ["MXSegmentedPager"]
     )
   ],
   dependencies: [
     .package(url: "https://github.com/sthwicked/MXPagerView", from: "1.0.1"),
-    .package(url: "https://github.com/sthwicked/MXParallaxHeader", from: "1.1.1")
+    .package(url: "https://github.com/sthwicked/MXParallaxHeader", from: "1.1.1"),
+    .package(url: "https://github.com/sthwicked/MXSegmentedControl", from: "1.1.2"),
   ],
   targets: [
     .target(
@@ -24,10 +25,6 @@ let package = Package(
       ],
       path: "MXSegmentedPager",
       publicHeadersPath: "."
-    ),
-    .binaryTarget(
-      name: "MXSegmentedControl",
-      path: "SwiftPM/MXSegmentedControl.xcframework"
     )
   ],
   swiftLanguageVersions: [.v5],
