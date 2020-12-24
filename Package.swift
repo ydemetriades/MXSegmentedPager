@@ -12,7 +12,7 @@ let package = Package(
   ],
   dependencies: [
     .package(url: "https://github.com/sthwicked/MXPagerView", from: "1.0.1"),
-    .package(url: "https://github.com/sthwicked/MXParallaxHeader", from: "1.1.1"),
+    .package(url: "https://github.com/sthwicked/MXParallaxHeader", from: "1.1.2"),
     .package(url: "https://github.com/sthwicked/MXSegmentedControl", from: "1.1.2"),
   ],
   targets: [
