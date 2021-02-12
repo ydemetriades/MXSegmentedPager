@@ -108,8 +108,8 @@
     frame.origin = CGPointZero;
     if (!CGRectEqualToRect(self.contentView.frame, frame)) {
       self.contentView.frame = frame;
-      self.contentView.contentSize = self.contentView.frame.size;
     }
+    self.contentView.contentSize = self.contentView.frame.size;
     self.contentView.contentInset = UIEdgeInsetsMake(self.contentView.parallaxHeader.height, 0, 0, 0);
     self.contentView.scrollEnabled = !!self.contentView.parallaxHeader.view;
 }
@@ -157,7 +157,9 @@
     
     frame.size.height -= self.contentView.parallaxHeader.minimumHeight;
     
-    self.pager.frame = frame;
+    if (!CGRectEqualToRect(self.pager.frame, frame)) {
+      self.pager.frame = frame;
+    }
 }
 
 #pragma mark Properties
