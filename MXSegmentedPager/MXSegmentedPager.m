@@ -106,10 +106,12 @@
     CGRect frame = self.bounds;
     
     frame.origin = CGPointZero;
-    self.contentView.frame = frame;
-    self.contentView.contentSize = self.contentView.frame.size;
-    self.contentView.scrollEnabled = !!self.contentView.parallaxHeader.view;
+    if (!CGRectEqualToRect(self.contentView.frame, frame)) {
+      self.contentView.frame = frame;
+      self.contentView.contentSize = self.contentView.frame.size;
+    }
     self.contentView.contentInset = UIEdgeInsetsMake(self.contentView.parallaxHeader.height, 0, 0, 0);
+    self.contentView.scrollEnabled = !!self.contentView.parallaxHeader.view;
 }
 
 - (void)layoutSegmentedControl {
